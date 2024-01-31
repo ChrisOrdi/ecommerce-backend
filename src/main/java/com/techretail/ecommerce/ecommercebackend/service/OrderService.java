@@ -31,7 +31,11 @@ public class OrderService {
     }
 
     // add 1 order
-    public Order addOrder(Order order) {
+    public Order saveOrder(Optional<Order> order) {
         return orderRepository.save(order);
+    }
+
+    public void deleteOrder(UUID id) {
+        orderRepository.deleteById(id);
     }
 }
